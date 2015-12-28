@@ -10,7 +10,10 @@ Documentation for a basic barebones Arduino microcontroller circuit.
   - (2) 22uF Ceramic Capacitors
 - Pushbutton 
 
-###### Connections
+##### Instructions
+1. Use the LM7805C, .33uF, .1uF to make a voltage regulator circuit. The regulator's 5V output will power the breadboarded '328P-PU.  
+2. Make the following connections: 
+
 | Arduino Pins   |  ATmega328P-PU  | Misc. Connections | 
 | :------------: | :-------------: | :---------------: | 
 |  DIG 10        |  Pin 1 (Reset)  | 
@@ -26,8 +29,10 @@ Documentation for a basic barebones Arduino microcontroller circuit.
 |                |  Pin 21         | AREF (Vcc)        |
 |                |  Pin 22         | Gnd               |
 
-Note: 
-- If you're using a 4 pin 16Mhz C. Oscillator, connect the output pin of the oscillator to Pin 9. (See Acknowledgement 2)
+Note: If you're using a 4 pin 16Mhz C. Oscillator, connect the output pin of the oscillator to Pin 9 (See Acknowledgement 2). Otherwise connect a 2-pin 16Mhz oscillator across pin 9 and pin 10 of the '328P-PU 
+
+3. On the Arduino Uno, open and upload the "ArduinoISP" example sketch. 
+4. While the ArduinoISP sketch is running on the Uno, go to "Tools" -> "Burn Bootloader" and wait until it finishes. 
 
 ##### Acknowledgements
 [1. Indepth Explanation](https://www.arduino.cc/en/Main/Standalone)  
