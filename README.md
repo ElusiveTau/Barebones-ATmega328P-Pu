@@ -1,17 +1,18 @@
-###### Barebones-ATmega328P-Pu
-Documentation for a basic barebones Arduino microcontroller circuit.  
+### Preface
+This documents tracks my progress as I learn about the ATmega328P-PU microcontroller (henceforth referred to as 328PPU). The "Barebones" aspect of this project involves breadboarding the 328PPU and slowly adding peripherals to it as required by different projects. By doing this, I hope to gain understanding of the architecture of the chip and hope to catch a glimpse of the process of designing a microcontroller. 
 
+### Barebones 328PPU Build 
 ###### Parts List
-- Arduino Uno Board
-- ATmega328P-PU
-- LM7805C Voltage Regulator 
+- Arduino Uno Board (328PPU's AVRISP)
+- ATmega328P-PU (Target uC)
+- LM7805C Voltage Regulator
   - .33 uF, .1uF Electrolytic Capacitors  
-- 16 MHz Crystal Oscillator *(2 or 4 pins)*
+- 16 MHz Crystal Oscillator *(2 or 4 pins)* 
   - (2) 22uF Ceramic Capacitors
 - Pushbutton 
 
-##### Instructions
-1. Use the LM7805C, .33uF, .1uF to make a voltage regulator circuit. The regulator's 5V output will power the breadboarded '328P-PU.  
+###### Instructions
+1. Use the LM7805C, .33uF, .1uF to make a typical voltage regulator circuit. The regulator's 5V output will power the breadboarded 328PPU.  
 2. Make the following connections: 
 
 | Arduino Pins   |  ATmega328P-PU  | Misc. Connections | 
@@ -29,10 +30,14 @@ Documentation for a basic barebones Arduino microcontroller circuit.
 |                |  Pin 21         | AREF (Vcc)        |
 |                |  Pin 22         | Gnd               |
 
-Note: If you're using a 4 pin 16Mhz C. Oscillator, connect the output pin of the oscillator to Pin 9 (See Acknowledgement 2). Otherwise connect a 2-pin 16Mhz oscillator across pin 9 and pin 10 of the '328P-PU 
+Note 1: If you're using a 4 pin 16Mhz crystal oscillator (as I did), connect the output pin of the oscillator to Pin 9 (See Acknowledgement 2). Otherwise connect a 2-pin 16Mhz oscillator across pin 9 and pin 10 of the 328PPU
 
-3. On the Arduino Uno, open and upload the "ArduinoISP" example sketch. 
-4. While the ArduinoISP sketch is running on the Uno, go to "Tools" -> "Burn Bootloader" and wait until it finishes. 
+3. We now need to prepare the Arduino to upload the bootloader onto our blank 328PPU chip. Open and upload the "ArduinoISP" example sketch onto the Arduino Uno. Check again that the "board" under "tools" is Arduino Uno. Check again that "Port" corresponds to the port to which your arduino is connected. We're now ready to burn the bootloader onto the blank 328PPU. 
+4. While the ArduinoISP sketch is running on the Uno, go to "Tools" -> "Burn Bootloader" on the Arduino IDE and wait until the IDE finishes burning the bootloader onto the 328PPU. After receiving a success/confirmation status, your blank 328PPU should contain the bootloader. This enables the 328PPU chip to be programed via the Arduino.  
+5. **How to Upload a Program Onto 328PPU via "Arduino as ISP"**  
+Make sure the connections in step 2 are made. We will upload a program to the breadboarded 328PPU by using the Arduino as an intermediary programmer (hence "Arduino as ISP"). Make sure the Arduino Uno is running the "ArduinoISP" sketch, then open the sketch that you wish to upload onto the 328PPU. To command the Arduino to upload the sketch onto the breadboarded 328PPU, hold ***shift** and click on the upload button (while holding shift, the button status display should toggle from "Upload" to "Upload Using Programmer"). 
+After uploading is complete, the 328PPU should be programmed with the desired sketch. 
+
 
 ##### Acknowledgements
 [1. Indepth Explanation](https://www.arduino.cc/en/Main/Standalone)  
