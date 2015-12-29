@@ -38,7 +38,7 @@ Make sure the connections in step 2 are made. We will upload a program to the br
 After uploading is complete, the 328PPU should be programmed with the desired sketch. 
 
 
-##### Notes 
+### Notes 
 1. [Indepth Explanation of Barebones Arduino Build](https://www.arduino.cc/en/Main/Standalone)  
 2. [4-Pin C. Oscillator](http://forum.arduino.cc/index.php?topic=368237.msg2538317#msg2538317)
 3. If you're using a 4 pin 16Mhz crystal oscillator (as I did), connect the output pin of the oscillator to Pin 9. Otherwise connect a 2-pin 16Mhz oscillator across pin 9 and pin 10 of the 328PPU. See Note 2.
