@@ -16,7 +16,7 @@ This documents tracks my progress as I learn about the ATmega328P-PU microcontro
 2. Make the following connections: 
 
 | Arduino Pins   |  ATmega328P-PU  | Misc. Connections | Notes |
-| :------------: | :-------------: | :---------------: | 
+| :------------: | :-------------: | :---------------: |:------|
 |  DIG 10        |  Pin 1 (Reset)  | 
 |  DIG 11        |  Pin 17         |
 |  DIG 12        |  Pin 18         | 
