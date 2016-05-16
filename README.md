@@ -1,5 +1,5 @@
 ### Preface
-This documents tracks my progress as I learn about the ATmega328P-PU microcontroller (henceforth referred to as 328PPU). The "Barebones" aspect of this project involves breadboarding the 328PPU and slowly adding peripherals to it as required by different projects. By doing this, I hope to gain understanding of the architecture of the chip and hope to catch a glimpse of the process of designing a microcontroller. 
+This documents tracks my progress as I learn about the ATmega328P-PU microcontroller (aka. 328PPU). The "Barebones" aspect of this project involves breadboarding the 328PPU and slowly adding peripherals to it as required by different projects. By doing this, I hope to gain understanding of the architecture of the chip and hope to catch a glimpse of the process of designing a microcontroller. 
 
 ### Barebones 328PPU Build 
 ###### Parts List
